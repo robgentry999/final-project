@@ -1,9 +1,13 @@
+//displays specific course information
+//shows return to list, update, and delete button
 import React, {useState, useContext, useEffect} from 'react';
 import {Context} from '../Context';
 import {useParams, Link, useNavigate} from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 
 function CourseDetail(){
+
+    //data and authentication from context
     const {data, authenticatedUser} = useContext(Context);
     const [course, setCourse] = useState({});
     const {id} = useParams();
@@ -17,6 +21,7 @@ function CourseDetail(){
             console.log(err);
             navigate('/notfound');
         })
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     

@@ -1,3 +1,4 @@
+//displays a sign up page, button, and cancel button
 import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Form from "./Form";

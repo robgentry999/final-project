@@ -1,3 +1,6 @@
+//displays all courses
+//each course has custom link
+//displays create course
 import React, {useContext, useEffect, useState} from "react";
 import {Context} from '../Context'
 import {Link} from "react-router-dom";

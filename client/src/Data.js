@@ -1,6 +1,7 @@
 import config from './Config';
 
 export default class Data {
+    //creating api function with params
     api(path, method = 'GET', body = null, requiresAuth = false, credentials = null){
         const url = config.apiBaseUrl + path;
         const options = {

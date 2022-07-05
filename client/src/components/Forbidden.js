@@ -1,3 +1,4 @@
+//displays when attempted page is inauthorized
 import React from 'react'
 
 function Forbidden() {

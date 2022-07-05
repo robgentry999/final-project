@@ -7,7 +7,7 @@ function UserSignOut() {
   useEffect(() => signOut());
 
   return (
-    <Navigate to="/SignIn" />
+    <Navigate to="/" />
   );
 }
 
