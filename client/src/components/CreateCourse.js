@@ -3,6 +3,7 @@ import {Context} from '../Context';
 import {useNavigate, Link} from 'react-router-dom';
 
 function CreateCourse(){
+    //get data and authUser from context
     const {data, authenticatedUser} = useContext(Context);
     const [errors, setErrors] = useState([]);
     const navigate = useNavigate();
@@ -18,7 +19,7 @@ function CreateCourse(){
         const {name, value} = e.target;
         setCourse(course => ({...course, [name]: value}))
     }
-
+    //submit function
      const submit = (e) => {
         e.preventDefault();
          data.createCourse(course, authenticatedUser)

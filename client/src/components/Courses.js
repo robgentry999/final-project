@@ -13,6 +13,7 @@ function Courses() {
         data.getCourses()
         .then(res => setCourses(res))
         .catch(err => console.log(err))
+        // eslint-disable-next-line
     },[]);
 
   return (
