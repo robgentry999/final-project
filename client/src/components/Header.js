@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../Context";
-
+//creates page header
 function Header(){
     const {authenticatedUser} = useContext(Context)
     return(

@@ -5,8 +5,10 @@ import {useNavigate, Link} from 'react-router-dom';
 function CreateCourse(){
     //get data and authUser from context
     const {data, authenticatedUser} = useContext(Context);
+    //new errors instance as an array
     const [errors, setErrors] = useState([]);
     const navigate = useNavigate();
+    //new course with object instance 
     const [course, setCourse] = useState({
         title: '',
         description: '',
@@ -14,13 +16,14 @@ function CreateCourse(){
         materialsNeeded: '',
         userId: authenticatedUser.id
     });
-
+    //change function
     const change = (e) => {
         const {name, value} = e.target;
         setCourse(course => ({...course, [name]: value}))
     }
     //submit function
      const submit = (e) => {
+         //stops page refresh
         e.preventDefault();
          data.createCourse(course, authenticatedUser)
         .then(errors => {
@@ -30,6 +33,7 @@ function CreateCourse(){
                 navigate('/')
             }
         })
+        //catch errors
         .catch(err => {
             navigate('/error');
             

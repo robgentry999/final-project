@@ -9,8 +9,10 @@ function CourseDetail(){
 
     //data and authentication from context
     const {data, authenticatedUser} = useContext(Context);
+    //new Course in state
     const [course, setCourse] = useState({});
     const {id} = useParams();
+    //isEditing holds boolean in state
     const [isEditing, setIsEditing] = useState(false);
     const navigate = useNavigate();
 
@@ -24,8 +26,9 @@ function CourseDetail(){
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
-    
+    //when app loads to DOM
     useEffect(() => {
+        //if course and authenticated user and course user id are equal to auth user id, set is editing to true, else false
         if(course && authenticatedUser && course.userId === authenticatedUser.id){
             setIsEditing(true);
         }else{

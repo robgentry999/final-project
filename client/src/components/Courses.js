@@ -6,13 +6,20 @@ import {Context} from '../Context'
 import {Link} from "react-router-dom";
 
 function Courses() {
+  //courses array in state
     const [courses, setCourses] = useState([]);
+    //data from context api
     const {data} = useContext(Context)
 
+    //when loaded to DOM
     useEffect(() => {
+      //call get Courses from data
         data.getCourses()
+        //set course in state with res
         .then(res => setCourses(res))
+        //catch errors
         .catch(err => console.log(err))
+        
         // eslint-disable-next-line
     },[]);
 

@@ -1,5 +1,5 @@
 import React from 'react'
-
+//displays when navigated page does not exist
 function NotFound() {
 
   return (

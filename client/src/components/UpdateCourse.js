@@ -4,25 +4,35 @@ import { Context } from '../Context';
 
 
 function UpdateCourse() {
+    //data and auth user from context
     const { data, authenticatedUser } = useContext(Context);
+    //new course
     const [course, setCourse] = useState({});
+    //get id from useParams
     const { id } = useParams();
+    //navigate method stored
     const navigate = useNavigate();
     const [errors, setErrors] = useState([]);
 
+    //when component loads to DOM
     useEffect(() => {
+        //pass id as param from courseDetail
         data.courseDetail(id)
+        //then set course in state
         .then (course => setCourse(course))
+        //catch errors
         .catch(err => console.log(err));
+        // eslint-disable-next-line
     }, [])
-
+    //new change function
     const change = (e) => {
         const {name, value} = e.target;
         setCourse(course => ({...course, [name]: value}))
     }
-
+    //new submit function
      const submit = (e) => {
         e.preventDefault();
+        //get update course method from data and pass to data 
          data.updateCourse(course, authenticatedUser)
         .then(errors => {
             if(errors.length){
