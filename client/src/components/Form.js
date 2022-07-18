@@ -5,14 +5,14 @@ export default function Form ({cancel, errors, submit, submitButtonText, element
    function handleSubmit(e){
        //prevents page reload
        e.preventDefault()
-       //call submit
+       //call submit function
         submit();
     }
     //new handle cancel function
    function handleCancel(e){
        //prevents page reload
         e.preventDefault();
-        //calls cancel
+        //calls cancel function
         cancel();
     }
 

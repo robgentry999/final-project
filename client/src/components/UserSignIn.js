@@ -16,7 +16,7 @@ function UserSignIn(){
     //store useLocation in a constant
     const location = useLocation()
 
-    //change function
+
     const change = (e) => {
         //name and value constant to hold events on input targets
         const name = e.target.name;
@@ -25,7 +25,6 @@ function UserSignIn(){
         setUser(user => ({...user, [name]: value}))
     }
 
-    //submit function
     const submit = () => {
         const {emailAddress, password} = user
         signIn(emailAddress, password).then(() => {

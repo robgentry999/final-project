@@ -18,7 +18,6 @@ function UserSignUp(){
     const [errors, setErrors] = useState([])
     const navigate = useNavigate();
 
-    //new change function
     const change = (e) => {
         //new name and value constants to store events
         const {name, value} = e.target;
@@ -26,7 +25,6 @@ function UserSignUp(){
         setUser(user => ({...user, [name]: value}))
     }
 
-    //new submit function
      const submit = () => {
          //create user method from data and pass to user
          data.createUser(user)

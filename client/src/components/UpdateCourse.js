@@ -24,12 +24,13 @@ function UpdateCourse() {
         .catch(err => console.log(err));
         // eslint-disable-next-line
     }, [])
-    //new change function
+
     const change = (e) => {
         const {name, value} = e.target;
+        //setCourse to spread course stored as key pair
         setCourse(course => ({...course, [name]: value}))
     }
-    //new submit function
+
      const submit = (e) => {
         e.preventDefault();
         //get update course method from data and pass to data 

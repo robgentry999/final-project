@@ -16,15 +16,16 @@ function CreateCourse(){
         materialsNeeded: '',
         userId: authenticatedUser.id
     });
-    //change function
+    //sets course with current courses name,spread,value as pairs 
     const change = (e) => {
         const {name, value} = e.target;
         setCourse(course => ({...course, [name]: value}))
     }
-    //submit function
+
      const submit = (e) => {
          //stops page refresh
         e.preventDefault();
+        //calls create course and insets data from course and auth
          data.createCourse(course, authenticatedUser)
         .then(errors => {
             if(errors.length){

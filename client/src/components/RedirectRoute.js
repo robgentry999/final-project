@@ -14,6 +14,8 @@ function RedirectRoute() {
     //id from use params
     const {id} = useParams();
     const navigate = useNavigate()
+
+    
     //when component loads to DOM
     useEffect(() => {
         data.courseDetail(id)
